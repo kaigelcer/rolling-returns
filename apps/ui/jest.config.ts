@@ -1,8 +1,8 @@
 export default {
-  displayName: 'rolling-returns-ui',
+  displayName: 'ui',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/rolling-returns-ui',
+  coverageDirectory: '../../coverage/apps/ui',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

@@ -1,28 +1,28 @@
 {
-  "name": "rolling-returns-ui",
+  "name": "ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/rolling-returns-ui/src",
+  "sourceRoot": "apps/ui/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/rolling-returns-ui",
-        "index": "apps/rolling-returns-ui/src/index.html",
-        "browser": "apps/rolling-returns-ui/src/main.ts",
+        "outputPath": "dist/apps/ui",
+        "index": "apps/ui/src/index.html",
+        "browser": "apps/ui/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/rolling-returns-ui/tsconfig.app.json",
+        "tsConfig": "apps/ui/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/rolling-returns-ui/public"
+            "input": "apps/ui/public"
           }
         ],
-        "styles": ["apps/rolling-returns-ui/src/styles.scss"],
+        "styles": ["apps/ui/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -53,18 +53,21 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "rolling-returns-ui:build:production"
+          "buildTarget": "ui:build:production"
         },
         "development": {
-          "buildTarget": "rolling-returns-ui:build:development"
+          "buildTarget": "ui:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/ui/proxy.conf.json"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "rolling-returns-ui:build"
+        "buildTarget": "ui:build"
       }
     },
     "lint": {
@@ -74,14 +77,14 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/rolling-returns-ui/jest.config.ts"
+        "jestConfig": "apps/ui/jest.config.ts"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "rolling-returns-ui:build",
-        "staticFilePath": "dist/apps/rolling-returns-ui/browser",
+        "buildTarget": "ui:build",
+        "staticFilePath": "dist/apps/ui/browser",
         "spa": true
       }
     }
