@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/apps/server/main.js && npx http-server dist/apps/ui/browser"
+    "start": "node dist/apps/server/main.js & npx http-server dist/apps/ui/browser"
   },
   "private": true,
   "dependencies": {
