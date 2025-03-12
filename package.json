@@ -2,7 +2,9 @@
   "name": "@rolling-returns/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "cd dist/apps/server && node main.js"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~19.1.0",
