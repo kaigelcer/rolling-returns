@@ -12,7 +12,7 @@ import {
   providedIn: 'root',
 })
 export class DataService {
-  baseURL = window.location.hostname == 'localhost' ? '' : '';
+  baseURL = window.location.hostname == 'localhost' ? '' : 'https://rolling-returns-production.up.railway.app';
   constructor(private http: HttpClient) {}
 
   getTickers() {
