@@ -12,16 +12,20 @@ import {
   providedIn: 'root',
 })
 export class DataService {
+  baseURL = window.location.hostname == 'localhost' ? '' : '';
   constructor(private http: HttpClient) {}
 
   getTickers() {
-    return this.http.get<string[]>('/api/tickers');
+    return this.http.get<string[]>(`${this.baseURL}/api/tickers`);
   }
 
   getPriceHistory(symbol: string) {
-    return this.http.get<StockAnalysisPrice[]>(`/api/price-history`, {
-      params: { symbol },
-    });
+    return this.http.get<StockAnalysisPrice[]>(
+      `${this.baseURL}/api/price-history`,
+      {
+        params: { symbol },
+      }
+    );
   }
 
   addReturnsToData(
